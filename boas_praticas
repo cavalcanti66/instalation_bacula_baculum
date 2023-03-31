@@ -1,0 +1,5 @@
+Faça a cópia inicial dos arquivos de configuração do Bacula, caso não o faça, irei disponibilizar os padronizados no repositório.
+Sempre faça uma cópia de segurança de um arquivo antes de realizar uma nova configuração, afinal, são comandos, se você fizer algo errado, irá quebrar xd.
+Tenha sempre senhas extremamente fortes para seus clientes, directors e storages.
+Recomendado utilizar o armazenamento via socket, ou seja, é ideal que na unidade onde são realizados os backups seja instalado o daemon de armazenamento do bacula para melhor perfomance.
+Obvio que funciona com pontos de montagem, porém haverá perda de performance e maior consumo de banda.
