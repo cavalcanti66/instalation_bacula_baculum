@@ -1,0 +1,22 @@
+# Comandos testados em servidor com CentOS 7 limpo instalado.
+
+# Validando arquivos de configuração
+# Exibe a linha onde está o erro de configuração referente a X serviço do bacula, caso não exiba nada ao executar o comando, a configuração está correta.
+
+bacula-dir -tc /opt/bacula/etc/bacula-dir.conf
+bacula-sd -tc /opt/bacula/etc/bacula-sd.conf
+bacula-fd -tc /opt/bacula/etc/bacula-fd.conf
+
+# Reinicialização de serviços
+
+systemctl restart bacula-dir.service
+systemctl restart bacula-sd.service
+systemctl restart bacula-fd.service
+
+# Verificando serviços rodando
+
+ps aux | grep bacula
+systemctl
+
+# Portas do firewall que o bacula escuta
+netstat -tulnp | grep -i bacula
