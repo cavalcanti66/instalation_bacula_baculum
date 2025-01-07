@@ -1,0 +1,40 @@
+# Caso faça uma nova instalação do Centos 7, pode ser que você tenha problemas com repositórios para downloads em geral, devido ao fim da vida útil. Em breve estarei adicionando versões do bacula em outros SOs, mas por hora, segue repositório funcional.
+# Adicionar essas informações no arquivo CentOS-Base.repo em /etc/yum.repos.d
+# Vídeo de onde encontrei a correção do problema: https://www.youtube.com/watch?v=yX4LPyuhHxE&lc=UgxZjjPXrN2Q3QJSHaJ4AaABAg.ACQYsf2iihbACg8bQUyXY6
+# O canal acima não me pertence!
+
+[base]
+name=CentOS-$releasever - Base
+baseurl=https://vault.centos.org/7.9.2009/os/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled=1
+
+[updates]
+name=CentOS-$releasever - Updates
+baseurl=https://vault.centos.org/7.9.2009/updates/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled=1
+
+[extras]
+name=CentOS-$releasever - Extras
+baseurl=https://vault.centos.org/7.9.2009/extras/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled=1
+
+[centosplus]
+name=CentOS-$releasever - Plus
+baseurl=https://vault.centos.org/7.9.2009/centosplus/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled=0
+
+# Explicação:
+# [nome_do_repositorio]: Define o nome do repositório, como base, updates, extras, etc.
+# name: Nome legível do repositório, contendo uma descrição com o nome da versão (usando a variável $releasever).
+# baseurl: URL de onde os pacotes serão baixados, incluindo a versão específica e arquitetura ($basearch).
+# gpgcheck: Verifica a assinatura GPG dos pacotes baixados (1 significa ativado).
+# gpgkey: Caminho para a chave GPG usada para verificar a autenticidade dos pacotes.
+# enabled: Define se o repositório está habilitado (1 significa habilitado, 0 significa desabilitado).
